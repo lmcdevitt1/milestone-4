@@ -47,7 +47,7 @@ class RentalController extends Controller
         $laptop = Laptop::findOrFail($validated['laptop_id']);
 
         // Check whether the laptop is available
-        if (! $laptop->is_available) {
+    if (!$laptop->is_available) {
             return back()
                 ->withErrors(['laptop_id' => 'This laptop is unavailable.'])
                 ->withInput();

@@ -30,9 +30,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/rentals/{rental}', [RentalController::class, 'destroy'])
         ->name('rentals.destroy');
     
-    Route::get('/app', function () { 
+    Route::get('/resources/views/app.blade.php', function () { 
         return view('app');
-    })->name('app');
+    });
 
 });
     require __DIR__.'/settings.php';
